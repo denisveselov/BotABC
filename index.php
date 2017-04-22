@@ -18,6 +18,17 @@ switch ($message){
         break;
 
 
+    case 'Почему?':
+        $message = 'Нет работы с голосом! МВ она такая!';
+        sendMessage($tokken, $id, $message);
+        break;
+
+    case 'ахаха':
+        $message = 'Не смешно! Я на 3 скилл хочу!';
+        sendMessage($tokken, $id, $message);
+        break;
+
+
     default:
         $message = 'Пиши биз ашибак!';
         sendMessage($tokken, $id, $message);

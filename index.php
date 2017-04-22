@@ -22,7 +22,6 @@ switch ($message){
         $message = 'Пиши биз ашибак!';
         sendMessage($tokken, $id, $message);
 }
-//sendMessage($tokken, $id, $message);
 function sendMessage($tokken, $id, $message)
 {
     file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $id ."&text=". $message);

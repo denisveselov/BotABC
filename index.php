@@ -2,12 +2,13 @@
 $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $message = $output['message']['text'];
+$user = $output['id']['first_name'];
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
 
 switch ($message){
 
     case 'Привет':
-        $message = 'Добрый день! Меня зовут АктивМэн';
+        $message = 'Добрый день '.$user.'! Меня зовут АктивМэн';
         sendMessage($tokken, $id, $message);
         break;
 
@@ -45,6 +46,11 @@ switch ($message){
 
     case 'С какого раза удаляем номер для проверки':
         $message = 'Если из реестра, то со второго, если добавлен оператором, то с первого';
+        sendMessage($tokken, $id, $message);
+        break;
+
+    case 'Когда зарплата':
+        $message = 'Каждого 20го и 5го числа месяца';
         sendMessage($tokken, $id, $message);
         break;
 

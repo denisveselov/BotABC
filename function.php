@@ -14,7 +14,7 @@ function hi_func ($message, $hello_case, $id, $tokken)
 function bye_func ($message, $bye_case, $id, $tokken)
 {
     if (in_array($message, $bye_case)) {
-        $message = 'До побачення!\n Ой! \n До связи!';
+        $message = 'До побачення! Ой! До связи!';
         sendMessage($tokken, $id, $message);
     } else {
         $message = 'Пешы биз ашыбак!';

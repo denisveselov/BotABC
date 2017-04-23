@@ -1,5 +1,5 @@
 <?php
-$output = file_get_contents('php://input');
+$output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $message = $output['message']['text'];
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';

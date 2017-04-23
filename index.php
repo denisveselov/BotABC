@@ -1,38 +1,56 @@
 <?php
-$output = json_decode(file_get_contents('php://input'),true);
-$id = $output['message']['chat']['id'];
-$message = $output['message']['text'];
+$output = file_get_contents('php://input');
+
+/*
+$chat_id = $output['message']['chat']['id']; //запрос последнего чат ид
+$users_message = $output['message']['text'];*/
+
+
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
 
-include 'cases.php';
-include 'function.php';
 
-while ($message){
-    if (in_array($message, $hello_case)) {
+$url = 'https://api.telegram.org/bot'.$tokken. '/'; //переменная линк токкена
+
+function getUpdates($output){
+    $output = file_get_contents('php://input'); //Вызываю метод getUpdates
+    $output = json_decode($output,true);
+    return $output;
+
+}
+
+function getMessage($output){
+    $data = $output;
+    $chat_id = $output['message']['chat']['id']; //запрос последнего  ID чата
+    $users_message = $output['message']['text']; //запрос текста последнего сообщения
+}
+
+function sendMessage($tokken, $id, $message, $url)
+{
+    file_get_contents($url. $tokken ."sendMessage?chat_id=". $id ."&text=". $message);
+}
+file_put_contents("logs.txt", $output);
+
+
+
+include 'cases.php';
+
+while ($users_message){
+    if (in_array($users_message, $hello_case)) {
         $message = 'Привет! Меня зовут АктивМэн';
-        sendMessage($tokken, $id, $message);
+        sendMessage($tokken, $chat_id, $message);
     } else {
         $message = 'Я тебя не совсем понял';
-        sendMessage($tokken, $id, $message);
+        sendMessage($tokken, $chat_id, $message);
     }
 break;
 }
-file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $id ."&text=". $message);
-
-while ($message) {
-    if (in_array($message, $bye_case)) {
+/*
+while ($users_message) {
+    if (in_array($users_message, $bye_case)) {
         $message = 'Пока! Ой! До побачення)';
-        sendMessage($tokken, $id, $message);
+        sendMessage($tokken, $chat_id, $message);
     } else {
         $message = 'Пиши без ошибок';
-        sendMessage($tokken, $id, $message);
+        sendMessage($tokken, $chat_id, $message);
     }
-    break;
-}
-
-
-function sendMessage($tokken, $id, $message)
-{
-    file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $id ."&text=". $message);
-}
-file_put_contents("logs.txt", $output);
+*/

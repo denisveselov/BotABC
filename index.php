@@ -23,7 +23,7 @@ while ($message) {
         $message = 'Пока! Ой! До побачення)';
         sendMessage($tokken, $id, $message);
     } else {
-        $message = 'Я тебя не совсем понял';
+        $message = 'Пиши без ошибок';
         sendMessage($tokken, $id, $message);
     }
     break;

@@ -17,16 +17,13 @@ if(in_array($message,$bye_case)){
         if ($message == 'Да'){
             $message = 'Тогда завтра спишемся)';
             sendMessage($tokken, $id, $message);
-            }
-            else{
-                $message = 'Я буду скучать(';
-                sendMessage($tokken, $id, $message);
+        }
+        else{
+            $message = 'Я буду скучать(';
+            sendMessage($tokken, $id, $message);
             }
         }
 }
-
-
-
 
 
 

@@ -29,9 +29,9 @@ while ($message) {
     }
     break;
 }
-function sendMessage($tokken, $id, $message, $url)
+function sendMessage($id, $message, $url)
 {
-    file_get_contents($url. $tokken ."sendMessage?chat_id=". $id ."&text=". $message);
+    file_get_contents($url. "sendMessage?chat_id=". $id ."&text=". $message);
 }
 file_put_contents("logs.txt", $output);
 

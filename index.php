@@ -29,9 +29,9 @@ while ($message) {
     }
     break;
 }
-function sendMessage($tokken, $id, $message, $url)
+function sendMessage($tokken, $id, $message)
 {
-    file_get_contents($url. $tokken ."/sendMessage?chat_id=". $id ."&text=". $message);
+    file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $id ."&text=". $message);
 }
 file_put_contents("logs.txt", $output);
 

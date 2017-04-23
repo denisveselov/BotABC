@@ -4,25 +4,11 @@ $id = $output['message']['chat']['id'];
 $message = $output['message']['text'];
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
 
+include 'function.php';
 include 'cases.php';
 
-if(in_array($message,$hello_case)){
-    $message = 'Привет! Меня зовут АктивМэн';
-    sendMessage($tokken, $id, $message);
-}
-else{
-    $message = 'Я тебя не совсем понял';
-    sendMessage($tokken, $id, $message);
-}
+hi_func($message, $hello_case, $tokken, $id);
 
-if(in_array($message,$bye_case)){
-    $message = 'До побачення! Ой! До связи. А ты завтра работаешь?)';
-    sendMessage($tokken, $id, $message);
-}
-else {
-    $message = 'Пеши биз ашыбак';
-    sendMessage($tokken, $id, $message);
-}
 
 function sendMessage($tokken, $id, $message)
 {

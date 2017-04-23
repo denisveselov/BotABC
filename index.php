@@ -10,9 +10,8 @@ if(in_array($message,$hello_case)){
     $message = 'Привет! Меня зовут АктивМэн';
     sendMessage($tokken, $id, $message);
 }
-
-else {
-    $message = 'Пеши биз ашыбак';
+else{
+    $message = 'Я тебя не совсем понял';
     sendMessage($tokken, $id, $message);
 }
 

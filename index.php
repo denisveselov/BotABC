@@ -7,24 +7,28 @@ $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
 include 'cases.php';
 include 'function.php';
 
-$message = $output['message']['text'];
+while ($message){
     if (in_array($message, $hello_case)) {
         $message = 'Привет! Меня зовут АктивМэн';
         sendMessage($tokken, $id, $message);
-}
-    else {
+    } else {
         $message = 'Я тебя не совсем понял';
         sendMessage($tokken, $id, $message);
+    }
+break;
 }
-$message = $output['message']['text'];
+
+while ($message) {
     if (in_array($message, $bye_case)) {
-        $message = 'До побачення! Ой! До связи!';
+        $message = 'Привет! Меня зовут АктивМэн';
         sendMessage($tokken, $id, $message);
-}
-    else {
-        $message = 'Пешы биз ашыбак!';
+    } else {
+        $message = 'Я тебя не совсем понял';
         sendMessage($tokken, $id, $message);
+    }
+    break;
 }
+
 
 function sendMessage($tokken, $id, $message)
 {

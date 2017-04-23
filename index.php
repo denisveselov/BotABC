@@ -10,9 +10,19 @@ if(in_array($message,$hello_case)){
     $message = 'Привет! Меня зовут АктивМэн';
     sendMessage($tokken, $id, $message);
 }
+
 if(in_array($message,$bye_case)){
-    $message = 'До побачення! Ой! До связи)';
-    sendMessage($tokken, $id, $message);
+    $message = 'До побачення! Ой! До связи. А ты завтра работаешь?)';
+    sendMessage($tokken, $id, $message);{
+        if ($message == 'Да'){
+            $message = 'Тогда завтра спишемся)';
+            sendMessage($tokken, $id, $message);
+            }
+            else{
+                $message = 'Я буду скучать(';
+                sendMessage($tokken, $id, $message);
+            }
+        }
 }
 
 

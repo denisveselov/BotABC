@@ -2,8 +2,8 @@
 $output = file_get_contents('php://input');
 $chat_id = $output['message']['chat']['id']; //запрос последнего чат ид
 
-/*
-$users_message = $output['message']['text'];*/
+include 'cases.php';
+$users_message = $output['message']['text'];
 
 
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
@@ -24,15 +24,6 @@ function getMessage($output){
     $users_message = $output['message']['text']; //запрос текста последнего сообщения
 }
 
-function sendMessage($tokken, $chat_id, $users_message, $message, $url)
-{
-    file_get_contents($url. $tokken ."sendMessage?chat_id=".$chat_id ."&text=". $message);
-}
-file_put_contents("logs.txt", $output);
-
-
-
-include 'cases.php';
 
 while ($users_message){
     if (in_array($users_message, $hello_case)) {
@@ -42,8 +33,17 @@ while ($users_message){
         $message = 'Я тебя не совсем понял';
         sendMessage($tokken, $chat_id, $message);
     }
-break;
+    break;
 }
+
+function sendMessage($tokken, $chat_id, $users_message, $message, $url)
+{
+    file_get_contents($url. $tokken ."sendMessage?chat_id=".$chat_id ."&text=". $message);
+}
+file_put_contents("logs.txt", $output);
+
+
+
 
 
 sendMessage($tokken,$chat_id, $users_message, $message, $url);

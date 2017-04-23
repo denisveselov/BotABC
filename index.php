@@ -3,8 +3,10 @@ $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $message = $output['message']['text'];
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
-$case = array('Привет','Привет!','Дратути','привет','Здорова!','здорово','Хай', 'добрый день','Добрый день!','привет!','Приветствую!','приветствую!','Здравствуй','Здравствуй!',);
-if(in_array($message,$case)){
+
+include 'cases.php';
+
+if(in_array($message,$hello_case)){
     $message = 'Привет! Меня зовут АктивМэн';
     sendMessage($tokken, $id, $message);
 }

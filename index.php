@@ -1,5 +1,8 @@
 <?php
-$output = json_decode(file_get_contents('php://input'),true);
+
+$output = json_decode(file_get_contents('php://input'), true); //method getUpdates
+return $output;
+
 $id = $output['message']['chat']['id'];
 $message = $output['message']['text'];
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
@@ -56,14 +59,6 @@ $users_message = $output['message']['text']; //запрос текста пос�
 
 include 'cases.php';
 
-
-
-function getUpdates(){
-    $output = file_get_contents('php://input'); //Вызываю метод getUpdates
-    $output = json_decode($output,true);
-    return $output;
-
-}
 
 function getMessage(){
 }

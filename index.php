@@ -7,10 +7,25 @@ $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
 include 'cases.php';
 include 'function.php';
 
-hi_func($message,$hello_case, $id, $tokken);
-return;
-bye_func ($message, $bye_case, $id, $tokken);
-return;
+$message = $output['message']['text'];
+    if (in_array($message, $hello_case)) {
+        $message = 'Привет! Меня зовут АктивМэн';
+        sendMessage($tokken, $id, $message);
+}
+    else {
+        $message = 'Я тебя не совсем понял';
+        sendMessage($tokken, $id, $message);
+}
+$message = $output['message']['text'];
+    if (in_array($message, $bye_case)) {
+        $message = 'До побачення! Ой! До связи!';
+        sendMessage($tokken, $id, $message);
+}
+    else {
+        $message = 'Пешы биз ашыбак!';
+        sendMessage($tokken, $id, $message);
+}
+
 function sendMessage($tokken, $id, $message)
 {
     file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $id ."&text=". $message);

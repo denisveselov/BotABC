@@ -8,10 +8,8 @@ include 'cases.php';
 include 'function.php';
 
 hi_func($message,$hello_case, $id, $tokken);
-exit;
 
 bye_func ($message, $bye_case, $id, $tokken);
-exit;
 
 function sendMessage($tokken, $id, $message)
 {

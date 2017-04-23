@@ -7,9 +7,7 @@ $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
 include 'cases.php';
 include 'function.php';
 
-
-
-
+  hi_func($message,$hello_case, $id, $tokken);
 
 function sendMessage($tokken, $id, $message)
 {

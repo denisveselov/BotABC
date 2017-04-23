@@ -4,10 +4,11 @@ $id = $output['message']['chat']['id'];
 $message = $output['message']['text'];
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
 
-include 'function.php';
 include 'cases.php';
+include 'function.php';
 
-hi_func($message, $hello_case, $tokken, $id);
+
+
 
 
 function sendMessage($tokken, $id, $message)

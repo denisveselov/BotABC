@@ -3,7 +3,7 @@ $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $message = $output['message']['text'];
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
-$url_bot = "https://api.telegram.org/bot"; //переменная линк бот
+$url = 'https://api.telegram.org/bot'; //переменная линк токкена
 
 
 include 'cases.php';
@@ -29,9 +29,9 @@ while ($message) {
     }
     break;
 }
-function sendMessage($url_bot, $tokken, $id, $message)
+function sendMessage($tokken, $id, $message, $url)
 {
-    file_get_contents($url_bot. $tokken ."sendMessage?chat_id=". $id ."&text=". $message);
+    file_get_contents($url. $tokken ."/sendMessage?chat_id=". $id ."&text=". $message);
 }
 file_put_contents("logs.txt", $output);
 

@@ -20,7 +20,7 @@ break;
 
 while ($message) {
     if (in_array($message, $bye_case)) {
-        $message = 'Привет! Меня зовут АктивМэн';
+        $message = 'Пока! Ой! До побачення)';
         sendMessage($tokken, $id, $message);
     } else {
         $message = 'Я тебя не совсем понял';

@@ -1,8 +1,8 @@
 <?php
 $output = file_get_contents('php://input');
+$chat_id = $output['message']['chat']['id']; //запрос последнего чат ид
 
 /*
-$chat_id = $output['message']['chat']['id']; //запрос последнего чат ид
 $users_message = $output['message']['text'];*/
 
 
@@ -24,9 +24,9 @@ function getMessage($output){
     $users_message = $output['message']['text']; //запрос текста последнего сообщения
 }
 
-function sendMessage($tokken, $id, $message, $url)
+function sendMessage($tokken, $chat_id, $users_message, $message, $url)
 {
-    file_get_contents($url. $tokken ."sendMessage?chat_id=". $id ."&text=". $message);
+    file_get_contents($url. $tokken ."sendMessage?chat_id=".$chat_id ."&text=". $message);
 }
 file_put_contents("logs.txt", $output);
 
@@ -44,6 +44,9 @@ while ($users_message){
     }
 break;
 }
+
+
+sendMessage($tokken,$chat_id, $users_message, $message, $url);
 /*
 while ($users_message) {
     if (in_array($users_message, $bye_case)) {

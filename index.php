@@ -5,7 +5,12 @@ $message = $output['message']['text'];
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
 
 include 'cases.php';
-include 'function.php';
+
+function sendMessage($tokken, $id, $message)
+{
+    file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $id ."&text=". $message);
+}
+file_put_contents("logs.txt", $output);
 
 while ($message){
     if (in_array($message, $hello_case)) {
@@ -15,8 +20,11 @@ while ($message){
         $message = 'Я тебя не совсем понял';
         sendMessage($tokken, $id, $message);
     }
-break;
+    break;
 }
+
+file_put_contents("logs.txt", $output);
+
 
 while ($message) {
     if (in_array($message, $bye_case)) {
@@ -28,10 +36,6 @@ while ($message) {
     }
     break;
 }
-
-
-function sendMessage($tokken, $id, $message)
-{
-    file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $id ."&text=". $message);
-}
 file_put_contents("logs.txt", $output);
+
+

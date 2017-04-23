@@ -8,9 +8,9 @@ include 'cases.php';
 include 'function.php';
 
 hi_func($message,$hello_case, $id, $tokken);
-
+$message();
 bye_func ($message, $bye_case, $id, $tokken);
-
+$message();
 function sendMessage($tokken, $id, $message)
 {
     file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $id ."&text=". $message);

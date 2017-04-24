@@ -7,10 +7,10 @@ include 'cases.php';
 include 'aswer.php';
 
 
-if(in_array($message,$hello_case xor $bye_case)){
-    $message = $hello_answer xor $bye_answer;
+if(in_array($message,$hello_case)){
+    $message = $hello_answer;
     sendMessage($tokken, $id, $message);
-    }
+}
 else {
     $message = 'Пеши биз ашыбак';
     sendMessage($tokken, $id, $message);

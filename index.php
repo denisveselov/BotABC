@@ -1,10 +1,12 @@
 <?php
-
-$output = json_decode(file_get_contents('php://input'), true); //method getUpdates
-$id = $output['message']['chat']['id'];
-$message = $output['message']['text'];
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
 $url = 'https://api.telegram.org/bot'; //переменная линк токкена
+
+
+
+$output = file_get_contents('php://input'); //получаем массив
+$id = $output['message']['chat']['id'];
+$message = $output['message']['text'];
 
 
 include 'cases.php';

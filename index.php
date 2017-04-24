@@ -29,6 +29,7 @@ while ($message) {
         $ans_message = 'Пеши биз ашыбак';
         sendMessage($tokken, $id, $ans_message);
     }
+    break;
 }
 
 // Отправка сообщения user'у и запись в лог

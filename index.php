@@ -15,6 +15,29 @@ function responses ()
 }
 
 
+switch ($message){
+    case 'Привет':
+        $ans_message = 'Добрый день! Меня зовут АктивМэн';
+        sendMessage($tokken, $chat_id, $ans_message);
+        break;
+    case 'Как дела?':
+        $ans_message = 'Дела гуд, но на линию не выпускают';
+        sendMessage($tokken, $chat_id, $ans_message);
+        break;
+    case 'Почему?':
+        $ans_message = 'Нет работы с голосом! МВ она такая!';
+        sendMessage($tokken, $chat_id, $ans_message);
+        break;
+    case 'ахаха':
+        $ans_message = 'Не смешно! Я на 3 скилл хочу!';
+        sendMessage($tokken, $chat_id, $ans_message);
+        break;
+    default:
+        $ans_message = 'Пиши биз ашибак!';
+        sendMessage($tokken, $chat_id, $ans_message);
+}
+
+/*
 // Logic //
 while ($message) {
     if (in_array($message, $hello_case)) {
@@ -26,6 +49,7 @@ while ($message) {
     }
     break;
 }
+*/
 
 //send Messages end put to logs file
 function sendMessage($tokken, $chat_id, $ans_message)

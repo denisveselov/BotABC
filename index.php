@@ -8,7 +8,7 @@ include 'aswer.php';
 
 
 if(in_array($message,$hello_case)){
-    $message = array_rand($hello_case,1);
+    $message = array_rand($hello_case);
     sendMessage($tokken, $id, $message);
 }
 else {

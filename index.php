@@ -32,6 +32,10 @@ switch ($message){
         $ans_message = 'Не смешно! Я на 3 скилл хочу!';
         sendMessage($tokken, $chat_id, $ans_message);
         break;
+    case 'Где я сейчас?':
+        $ans_message = 'Я не Яндекс-Карты - оглянись вокруг блин!';
+        sendMessage($tokken, $chat_id, $ans_message);
+        break;
     default:
         $ans_message = 'Пиши биз ашибак!';
         sendMessage($tokken, $chat_id, $ans_message);

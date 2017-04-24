@@ -4,7 +4,7 @@ $id = $output['message']['chat']['id'];
 $message = $output['message']['text'];
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
 include 'cases.php';
-include 'aswer.php';
+/*include 'aswer.php';*/
 
 
 
@@ -12,8 +12,7 @@ $hello_answer = array("Привет! Меня зовут АктивМэн! Че�
 
 
 if(in_array($message,$hello_case, $hello_answer)){
-    $answer = $hello_answer[mt_rand(0, count($hello_answer)-1)];
-    $message = $answer;
+    $message = $hello_answer[mt_rand(0, count($hello_answer)-1)];
     sendMessage($tokken, $id, $message);
 }
 else {

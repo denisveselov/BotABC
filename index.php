@@ -6,18 +6,18 @@ include 'tokken_var.php';
 include 'cases.php';
 include 'aswer.php';
 
-
+/*
 function responses ()
 {
     global $output;
     global $id;
     global $message;
 }
-
+*/
 
 switch ($message){
-    case 'Привет':
-        $ans_message = 'Добрый день! Меня зовут АктивМэн';
+    case (in_array($hello_case, $hello_answer)):
+        $ans_message = $hello_answer[mt_rand(0, count($hello_answer) - 1)];
         sendMessage($tokken, $chat_id, $ans_message);
         break;
     case 'Как дела?':
@@ -34,6 +34,10 @@ switch ($message){
         break;
     case 'Где я сейчас?':
         $ans_message = 'Я не Яндекс-Карты - оглянись вокруг блин!';
+        sendMessage($tokken, $chat_id, $ans_message);
+        break;
+    case 'В чем смысл жизни?':
+        $ans_message = 'У каждого свой, твой зарабатывать деньги!';
         sendMessage($tokken, $chat_id, $ans_message);
         break;
 

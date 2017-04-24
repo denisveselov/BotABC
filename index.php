@@ -31,19 +31,8 @@ while ($message){
         sendMessage($tokken, $id, $ans_message);
     }
     break;
-}
 
-while ($message){
-    if (in_array($message,$bye_case)){
-        $ans_message = $bye_answer[mt_rand(0, count($hello_answer) - 1)];
-        sendMessage($tokken, $id, $ans_message);
-    }
-    else {
-        $ans_message = 'Пеши биз ашыбак';
-        sendMessage($tokken, $id, $ans_message);
-    }
-    break;
-}
+
 // Отправка сообщения user'у и запись в лог
 
 function sendMessage($tokken, $id, $ans_message)

@@ -21,17 +21,15 @@ include 'cases.php';
 include 'aswer.php';
 
 // Логика
-while ($message){
-    if (in_array($message,$hello_case)){
+while ($message) {
+    if (in_array($message, $hello_case)) {
         $ans_message = $hello_answer[mt_rand(0, count($hello_answer) - 1)];
         sendMessage($tokken, $id, $ans_message);
-    }
-    else {
+    } else {
         $ans_message = 'Пеши биз ашыбак';
         sendMessage($tokken, $id, $ans_message);
     }
-    break;
-
+}
 
 // Отправка сообщения user'у и запись в лог
 

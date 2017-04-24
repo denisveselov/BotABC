@@ -11,16 +11,15 @@ $message = $output['message']['text'];
 
 include 'cases.php';
 
-
-while ($message) {
-    if (in_array($message, $hello_case)) {
-        $message = 'Привет! Меня зовут АктивМэн';
-        sendMessage($tokken, $id, $message);
-    } else {
-        $message = 'Я тебя не совсем понял';
-        sendMessage($tokken, $id, $message);
-    }
+if (in_array($message, $hello_case)) {
+    $message = 'Привет! Меня зовут АктивМэн';
+    sendMessage($tokken, $id, $message);
+} else {
+    $message = 'Я тебя не совсем понял';
+    sendMessage($tokken, $id, $message);
 }
+
+
 function sendMessage($tokken, $id, $message)
 {
     file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $id ."&text=". $message);

@@ -36,6 +36,7 @@ switch ($message){
         $ans_message = 'Я не Яндекс-Карты - оглянись вокруг блин!';
         sendMessage($tokken, $chat_id, $ans_message);
         break;
+
     default:
         $ans_message = 'Пиши биз ашибак!';
         sendMessage($tokken, $chat_id, $ans_message);

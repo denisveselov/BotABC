@@ -20,18 +20,18 @@ include 'aswer.php';
 // Логика
 
 if(in_array($message,$hello_case)){
-    $message = $hello_answer[mt_rand(0, count($hello_answer)-1)];
-    sendMessage($tokken, $id, $message);
+    $ans_message = $hello_answer[mt_rand(0, count($hello_answer)-1)];
+    sendMessage($tokken, $id, $ans_message);
 }
 else {
-    $message = 'Пеши биз ашыбак';
-    sendMessage($tokken, $id, $message);
+    $ans_message = 'Пеши биз ашыбак';
+    sendMessage($tokken, $id, $ans_message);
 }
 
 // Отправка сообщения user'у и запись в лог
 
-function sendMessage($tokken, $id, $message)
+function sendMessage($tokken, $id, $ans_message)
 {
-    file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $id ."&text=". $message);
+    file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $id ."&text=". $ans_message);
 }
 file_put_contents("logs.txt", $output);

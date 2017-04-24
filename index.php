@@ -18,14 +18,14 @@ include 'cases.php';
 include 'aswer.php';
 
 // Логика
-
-if(in_array($message,$hello_case)){
-    $ans_message = $hello_answer[mt_rand(0, count($hello_answer)-1)];
-    sendMessage($tokken, $id, $ans_message);
-}
-else {
-    $ans_message = 'Пеши биз ашыбак';
-    sendMessage($tokken, $id, $ans_message);
+while (in_array($message, $hello_answer)) {
+    if ($message == $hello_case) {
+        $ans_message = $hello_answer[mt_rand(0, count($hello_answer) - 1)];
+        sendMessage($tokken, $id, $ans_message);
+    } else {
+        $ans_message = 'Пеши биз ашыбак';
+        sendMessage($tokken, $id, $ans_message);
+    }
 }
 
 // Отправка сообщения user'у и запись в лог
@@ -35,20 +35,4 @@ function sendMessage($tokken, $id, $ans_message)
     file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $id ."&text=". $ans_message);
 }
 file_put_contents("logs.txt", $output);
-
-////Новый цикл
-
-responses($output, $id, $message);
-
-if(in_array($message,$bye_case)){
-    $ans_message = $bye_answer[mt_rand(0, count($bye_answer)-1)];
-    sendMessage($tokken, $id, $ans_message);
-}
-else {
-    $ans_message = 'Так когда ты вернёшься?';
-    sendMessage($tokken, $id, $ans_message);
-}
-
-file_put_contents("logs.txt", $output);
-
 

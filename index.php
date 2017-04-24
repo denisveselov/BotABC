@@ -15,8 +15,8 @@ function responses ()
 }
 */
 
-switch ($message){
-    case (in_array($hello_case, $hello_answer)):
+switch (true){
+    case (in_array($message,$hello_answer)):
         $ans_message = $hello_answer[mt_rand(0, count($hello_answer) - 1)];
         sendMessage($tokken, $chat_id, $ans_message);
         break;

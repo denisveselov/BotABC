@@ -12,7 +12,7 @@ $hello_answer = array("Привет! Меня зовут АктивМэн! Че�
 
 
 if(in_array($message,$hello_case, $hello_answer)){
-    $answer = $hello_answer[mt_rand(0, 3)];
+    $answer = $hello_answer[mt_rand(0, count($hello_answer)-1)];
     $message = $answer;
     sendMessage($tokken, $id, $message);
 }

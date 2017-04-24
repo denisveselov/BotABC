@@ -4,12 +4,15 @@ $output = json_decode(file_get_contents('php://input'), true);
 $id = $output['message']['chat']['id'];
 $message = $output['message']['text'];
 
+
+/*
 function responses ()
 {
     global $output;
     global $id;
     global $message;
 }
+*/
 
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU'; //Токкен бота
 

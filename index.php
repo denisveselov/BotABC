@@ -1,21 +1,11 @@
 <?php
 
 $output = json_decode(file_get_contents('php://input'), true);
+$id = $output['message']['chat']['id'];
+$message = $output['message']['text'];
 
+return $message; //new
 
-
-$last_update_id = 0; //new
-$data = $output; //new
-$last_object = $data[-1]; //new
-$current_update_id = $last_object['update_id']; //new
-
-if ($last_update_id != $current_update_id){    //new
-
-    $id = $last_object['message']['chat']['id'];
-    $message = $last_object['message']['text'];
-
-    return $message; //new
-}
 
 
 /*
@@ -42,6 +32,7 @@ while ($message) {
         $ans_message = 'Пеши биз ашыбак';
         sendMessage($tokken, $id, $ans_message);
     }
+    break;
 }
 
 // Отправка сообщения user'у и запись в лог

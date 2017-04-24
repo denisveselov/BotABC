@@ -4,6 +4,8 @@ $id = $output['message']['chat']['id'];
 $message = $output['message']['text'];
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
 include 'cases.php';
+include 'aswer.php';
+
 
 if(in_array($message,$hello_case xor $bye_case)){
     $message = $hello_answer xor $bye_answer;

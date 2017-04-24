@@ -7,8 +7,12 @@ include 'cases.php';
 include 'aswer.php';
 
 
+
+$hello_answer = array('Привет! Меня зовут АктивМэн! Чем могу помочь?', 'Достали уже! А, это ты) Я АктивМэээээн! Спрашвивай, что нужно и я пошел!', 'Погодка класс, да? Ах да, я АктивМээээн! Спроси у меня, что хочешь!');
+
+
 if(in_array($message,$hello_case)){
-    $answer = array_rand($hello_case);
+    $answer = array_rand($hello_answer);
     $message = $answer;
     sendMessage($tokken, $id, $message);
 }

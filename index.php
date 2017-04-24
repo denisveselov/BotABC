@@ -4,11 +4,7 @@ $id = $output['message']['chat']['id'];
 $message = $output['message']['text'];
 $tokken = '339498031:AAGS0gW6vqOjY9hiN8bAT7A7S1qPI-ZWUCU';
 include 'cases.php';
-/*include 'aswer.php';*/
-
-
-
-$hello_answer = array("Привет! Меня зовут АктивМэн! Чем могу помочь?", "Достали уже! А, это ты) Я АктивМэээээн! Спрашвивай, что нужно и я пошел!", "Погодка класс, да? Ах да, я АктивМээээн! Спроси у меня, что хочешь!");
+include 'aswer.php';
 
 
 if(in_array($message,$hello_case)){

@@ -4,7 +4,7 @@ $url = 'https://api.telegram.org/bot'; //переменная линк токк�
 
 
 
-$output = file_get_contents('php://input'); //получаем массив
+$output = json_decode(file_get_contents('php://input')); //получаем массив
 $id = $output['message']['chat']['id'];
 $message = $output['message']['text'];
 

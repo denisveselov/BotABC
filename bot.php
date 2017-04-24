@@ -1,6 +1,5 @@
 <?php
 
-// Запрос к серверам Telegram
 
 $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
@@ -32,5 +31,3 @@ function sendMessage($tokken, $id, $message)
 }
 file_put_contents("logs.txt", $output);
 return;
-
-?>

@@ -56,7 +56,12 @@ switch (in_array($message,$whatsup_case)) {
         sendMessage($tokken, $chat_id, $ans_message);
         break;
 }
-
+switch (in_array($message,$cause_case)) {
+    case TRUE:
+        $ans_message = $cause_answer;
+        sendMessage($tokken, $chat_id, $ans_message);
+        break;
+}
 
 
 

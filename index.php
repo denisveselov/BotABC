@@ -53,7 +53,7 @@ switch (in_array($message,$total_case)) {
 }
 switch (in_array($message,$jokes_case)) {
     case TRUE:
-        $ans_message = $jokes_answer;
+        $ans_message = $jokes_answer[mt_rand(0, count($jokes_answer) - 1)];
         sendMessage($tokken, $chat_id, $ans_message);
         break;
 }

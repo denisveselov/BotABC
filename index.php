@@ -51,6 +51,12 @@ switch (in_array($message,$total_case)) {
         sendMessage($tokken, $chat_id, $ans_message);
         break;
 }
+switch (in_array($message,$jokes_case)) {
+    case TRUE:
+        $ans_message = $jokes_answer;
+        sendMessage($tokken, $chat_id, $ans_message);
+        break;
+}
 
 
 

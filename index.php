@@ -32,8 +32,23 @@ switch (in_array($message,$fuck_case)) {
         $ans_message = $fuck_answer[mt_rand(0, count($fuck_answer) - 1)];
         sendMessage($tokken, $chat_id, $ans_message);
         break;
-
 }
+switch (in_array($message,$demand_case)) {
+    case TRUE:
+        $ans_message = $demand_answer[mt_rand(0, count($demand_answer) - 1)];
+        sendMessage($tokken, $chat_id, $ans_message);
+        break;
+}
+switch (in_array($message,$thanks_case)) {
+    case TRUE:
+        $ans_message = $thanks_answer[mt_rand(0, count($thanks_answer) - 1)];
+        sendMessage($tokken, $chat_id, $ans_message);
+        break;
+}
+
+
+
+
 /*
 switch (in_array($message,$bye_case)) {
     case TRUE:

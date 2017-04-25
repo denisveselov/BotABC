@@ -7,3 +7,4 @@ $user_name = $update['message']['from']['username'];
 $message = $update['message']['text'];
 $message_id = $update['message']['message_id'];
 $message_name = $update['message']['chat']['first_name'];
+$message = mb_strtolower($message,'UTF-8');

@@ -62,8 +62,12 @@ switch (in_array($message,$cause_case)) {
         sendMessage($tokken, $chat_id, $ans_message);
         break;
 }
-
-
+switch (in_array($message,$callback_case)) {
+    case TRUE:
+        $ans_message = $callback_answer;
+        sendMessage($tokken, $chat_id, $ans_message);
+        break;
+}
 
 
 //send Messages end put to logs file

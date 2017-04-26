@@ -75,6 +75,13 @@ switch (in_array($message,$anexception_case)) {
         break;
 }
 
+switch (in_array($message,$complaints_case)) {
+    case TRUE:
+        $ans_message = $complaints_answer;
+        sendMessage($tokken, $chat_id, $ans_message);
+        break;
+}
+
 //send Messages end put to logs file
 function sendMessage($tokken, $chat_id, $ans_message)
 {

@@ -91,9 +91,3 @@ function sendMessage($tokken, $chat_id, $ans_message)
 }
 file_put_contents("logs.txt", $update);
 
-$arr_messages = R::dispense('arraymessages');
-$arr_messages->user_name = $user_name;
-$arr_messages->chat_id = $chat_id;
-$arr_messages->message_id = $message_id;
-$arr_messages->message_txt = $message;
-$id = R::store($arr_messages);

@@ -1,11 +1,22 @@
 <?php
 
+require "db.php";
+
 //includes files:
+
 include 'global_var.php';
 include 'tokken_var.php';
 include 'cases.php';
 include 'aswer.php';
-require "db.php";
+
+
+$arr_messages = R::dispense('arraymessages');
+$arr_messages->user_name = $update['message']['from']['username'];
+$arr_messages->chat_id = $update['message']['chat']['id'];
+$arr_messages->message_id = $update['message']['message_id'];
+$arr_messages->message_txt = $update['message']['text'];
+$id = R::store($arr_messages);
+
 
 switch (in_array($message,$hello_case)){
     case TRUE:

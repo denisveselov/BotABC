@@ -10,14 +10,6 @@ include 'cases.php';
 include 'aswer.php';
 
 
-$arr_messages = R::dispense('arraymessages');
-$arr_messages->user_name = $update['message']['from']['username'];
-$arr_messages->chat_id = $update['message']['chat']['id'];
-$arr_messages->message_id = $update['message']['message_id'];
-$arr_messages->message_txt = $update['message']['text'];
-$id = R::store($arr_messages);
-
-
 switch (in_array($message,$hello_case)){
     case TRUE:
         $ans_message = $hello_answer[mt_rand(0, count($hello_answer) - 1)];
@@ -99,3 +91,9 @@ function sendMessage($tokken, $chat_id, $ans_message)
 }
 file_put_contents("logs.txt", $update);
 
+$arr_messages = R::dispense('arraymessages');
+$arr_messages->user_name = $update['message']['from']['username'];
+$arr_messages->chat_id = $update['message']['chat']['id'];
+$arr_messages->message_id = $update['message']['message_id'];
+$arr_messages->message_txt = $update['message']['text'];
+$id = R::store($arr_messages);

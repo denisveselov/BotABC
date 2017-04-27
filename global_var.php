@@ -6,3 +6,25 @@ $user_name = $update['message']['from']['username'];
 $message = $update['message']['text'];
 $message_id = $update['message']['message_id'];
 $message_name = $update['message']['chat']['first_name'];
+
+// подключаем clearDB;
+
+
+// забираем значения переменной $message, $user_name, $chat_id, $message_id , $message_name;
+
+//возвращаем значения переменных обработчику из БД;
+
+// обрабатываем событие - ответ уходит на sendMessage и в БД в поле bot_answer;
+
+
+
+####ClearDB####
+
+/*
+if $chat_id != тем что есть в таблице{
+    CREATE TABLE;
+}
+else{
+    запись значений массива ($update) в существующую таблицу == chat_id;
+
+*/

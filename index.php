@@ -5,7 +5,7 @@ include 'global_var.php';
 include 'tokken_var.php';
 include 'cases.php';
 include 'aswer.php';
-
+require "db.php";
 
 
 switch (in_array($message,$hello_case)){

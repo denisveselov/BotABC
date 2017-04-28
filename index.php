@@ -17,8 +17,8 @@ $test_txt2 = 'English symbol';
 $usermessages1 = R::dispense('usermessages1');
 $usermessages1->chat_id = $chat_id;
 $usermessages1->message_id = $message_id;
-//$usermessages1->message_txt = $test_txt;
-//$usermessages1->message_txt_two = $test_txt2;
+$usermessages1->message_txt = '$test_txt';
+$usermessages1->message_txt_two = '$test_txt2';
 
 
 

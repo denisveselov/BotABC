@@ -10,13 +10,7 @@ include 'cases.php';
 include 'aswer.php';
 
 
-//create array $update in DB
 
-$user_messages = R::dispense('usermessages');
-$user_messages->chat_id = $chat_id;
-$user_messages->message_id = $message_id;
-$user_messages->message = $message;
-$id = R::store($user_messages);
 
 
 
@@ -109,4 +103,12 @@ function sendMessage($tokken, $chat_id, $ans_message)
     file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $chat_id ."&text=". $ans_message);
 }
 file_put_contents("logs.txt", $update);
+
+//create array $update in DB
+
+$user_messages = R::dispense('usermessages');
+$user_messages->chat_id = $chat_id;
+$user_messages->message_id = $message_id;
+/* $user_messages->message = $message; */
+$id = R::store($user_messages);
 

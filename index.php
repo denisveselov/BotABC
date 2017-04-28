@@ -109,6 +109,7 @@ file_put_contents("logs.txt", $update);
 $user_messages = R::dispense('usermessages');
 $user_messages->chat_id = $chat_id;
 $user_messages->message_id = $message_id;
-/* $user_messages->message = $message; */
+$user_messages->message = $message;
+$user_messages->ans_message = $ans_message;
 $id = R::store($user_messages);
 

@@ -3,29 +3,11 @@
 require "db.php";
 
 //includes files:
-
+include 'global_var.php';
 include 'tokken_var.php';
 include 'cases.php';
 include 'aswer.php';
 
-$update = file_get_contents('php://input');
-$update = json_decode($update, true);
-$chat_id = $update['message']['chat']['id'];
-$user_name = $update['message']['from']['username'];
-$message = $update['message']['text'];
-$message_id = $update['message']['message_id'];
-$message_name = $update['message']['chat']['first_name'];
-
-//CREATE to DB RedBeanPHP
-
-$user_messages = R::dispense('usermessages');
-$user_messages->chat_id = $chat_id;
-$user_messages->message_id = $message_id;
-$user_messages->message = $message;
-$id = R::store($user_messages);
-
-
-/*
 
 //Logics
 switch (in_array($message,$test_case)){
@@ -107,7 +89,7 @@ switch (in_array($message,$complaints_case)) {
         sendMessage($tokken, $chat_id, $ans_message);
         break;
 }
-*/
+
 //send Messages end put to logs file
 function sendMessage($tokken, $chat_id, $ans_message)
 {

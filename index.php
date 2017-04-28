@@ -19,6 +19,12 @@ $usermessages1->message_id = $message_id;
 $id = R::store($usermessages1);
 
 //Logics
+switch (in_array($message,$test_case)){
+    case TRUE:
+        $ans_message = $test_answer;
+        sendMessage($tokken, $chat_id, $ans_message);
+        break;
+}
 switch (in_array($message,$hello_case)){
     case TRUE:
         $ans_message = $hello_answer[mt_rand(0, count($hello_answer) - 1)];

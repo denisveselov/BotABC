@@ -16,13 +16,13 @@ $message_txt='Hello World';
 $usermessages2 = R::dispense('usermessages2');
 /*$usermessages2->chat_id = $chat_id;
 $usermessages2->message_id = $message_id;*/
-$usermessages2->message_txt = $message_txt;
-
-
-
-
+$usermessages2->message_txt = ($message_txt);
 
 $id = R::store($usermessages2);
+
+
+
+
 
 //Logics
 switch (in_array($message,$test_case)){

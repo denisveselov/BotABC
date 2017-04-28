@@ -12,12 +12,10 @@ include 'aswer.php';
 
 //create array $update in DB
 
-$usermessages3 = R::dispense('usermessages3');
-$usermessages3->chat_id = $chat_id;
-$usermessages3->message_id = $message_id;
-$usermessages3->message_txt = 'Hello World';
-
-$id = R::store($usermessages3);
+$user_messages = R::dispense('usermessages');
+$user_messages->chat_id = $chat_id;
+$user_messages->message_id = $message_id;
+$id = R::store($user_messages);
 
 
 

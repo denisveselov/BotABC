@@ -14,9 +14,9 @@ include 'aswer.php';
 //create array $update in DB
 
 $usermessages2 = R::dispense('usermessages2');
-/*$usermessages2->chat_id = $chat_id;
-$usermessages2->message_id = $message_id;*/
-$usermessages2->txt_users = 'test_txt';
+$usermessages2->chat_id = $chat_id;
+$usermessages2->message_id = $message_id;
+
 
 
 

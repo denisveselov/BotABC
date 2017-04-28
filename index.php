@@ -10,15 +10,13 @@ include 'cases.php';
 include 'aswer.php';
 
 
-$test_txt='Русские символы';
-$test_txt2 = 'English symbol';
+
 //create array $update in DB
 
 $usermessages2 = R::dispense('usermessages2');
-$usermessages2->chat_id = $chat_id;
-$usermessages2->message_id = $message_id;
-$usermessages2->message_txt = 'test_txt';
-$usermessages2->message_txt_two = 'test_txt2';
+/*$usermessages2->chat_id = $chat_id;
+$usermessages2->message_id = $message_id;*/
+$usermessages2->txt_users = 'test_txt';
 
 
 

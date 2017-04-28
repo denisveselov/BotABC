@@ -11,7 +11,13 @@ include 'aswer.php';
 
 
 
-
+$message_input = $message;
+$user_messages = R::dispense('usermessages');
+$user_messages->chat_id = $chat_id;
+$user_messages->message_id = $message_id;
+$user_messages->message = $message_input;
+$user_messages->ans_message = $message_output;
+$id = R::store($user_messages);
 
 
 
@@ -105,11 +111,5 @@ function sendMessage($tokken, $chat_id, $ans_message)
 file_put_contents("logs.txt", $update);
 
 //create array $update in DB
-$message_input = $message;
-$user_messages = R::dispense('usermessages');
-$user_messages->chat_id = $chat_id;
-$user_messages->message_id = $message_id;
-$user_messages->message = $message_input;
-$user_messages->ans_message = $message_output;
-$id = R::store($user_messages);
+
 

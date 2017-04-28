@@ -107,7 +107,7 @@ switch (in_array($message,$complaints_case)) {
         sendMessage($tokken, $chat_id, $ans_message);
         break;
 }
-
+*/
 //send Messages end put to logs file
 function sendMessage($tokken, $chat_id, $ans_message)
 {
@@ -115,6 +115,6 @@ function sendMessage($tokken, $chat_id, $ans_message)
 }
 file_put_contents("logs.txt", $update);
 
-*/
+
 
 

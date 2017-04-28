@@ -12,14 +12,10 @@ include 'aswer.php';
 
 
 //create array $update in DB
-/*
+
 $arr_messages = R::dispense('arraymessages');
-$arr_messages->user_name = $user_name;
-$arr_messages->chat_id = $chat_id;
-$arr_messages->message_id = $message_id;
-$arr_messages->message_txt = $message;
+$arr_messages->import ($update, 'user_id, chat_id, message');
 $id = R::store($arr_messages);
-*/
 
 //Logics
 switch (in_array($message,$hello_case)){

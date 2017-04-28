@@ -10,12 +10,14 @@ include 'cases.php';
 include 'aswer.php';
 
 
-
+$message_txt='Hello World';
 //create array $update in DB
 
 $usermessages2 = R::dispense('usermessages2');
-$usermessages2->chat_id = $chat_id;
-$usermessages2->message_id = $message_id;
+/*$usermessages2->chat_id = $chat_id;
+$usermessages2->message_id = $message_id;*/
+$usermessages2->message_txt = $message_txt;
+
 
 
 

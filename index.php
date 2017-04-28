@@ -15,6 +15,7 @@ include 'aswer.php';
 $user_messages = R::dispense('usermessages');
 $user_messages->chat_id = $chat_id;
 $user_messages->message_id = $message_id;
+$user_messages->message = $message;
 $id = R::store($user_messages);
 
 

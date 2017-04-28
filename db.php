@@ -8,7 +8,7 @@ R::setup( 'mysql:host=us-cdbr-iron-east-03.cleardb.net;dbname=heroku_6ae1fc935ee
 session_start();
 /* var_dump(R::testConnection());*/ // проверка подлючения
 
-?>
+
 
 
 

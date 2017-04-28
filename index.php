@@ -14,7 +14,7 @@ $test_txt='Русские символы';
 $test_txt2 = 'English symbol';
 //create array $update in DB
 
-$usermessages2 = R::dispense('usermessages1');
+$usermessages2 = R::dispense('usermessages2');
 $usermessages2->chat_id = $chat_id;
 $usermessages2->message_id = $message_id;
 $usermessages2->message_txt = 'test_txt';

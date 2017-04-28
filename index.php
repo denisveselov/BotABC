@@ -15,6 +15,10 @@ include 'aswer.php';
 
 $arr_messages = R::dispense('arraymessages');
 $arr_messages->chat_id = $chat_id;
+$arr_messages->user_name = $user_name;
+$arr_messages->message_id = $message_id;
+$arr_messages->message_txt = $message;
+
 $id = R::store($arr_messages);
 
 //Logics

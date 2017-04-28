@@ -20,7 +20,7 @@ $usermessages2->message_id = $message_id;
 
 
 
-$id = R::store($usermessages1);
+$id = R::store($usermessages2);
 
 //Logics
 switch (in_array($message,$test_case)){

@@ -5,7 +5,7 @@ $chat_id = $update['message']['chat']['id'];
 $user_name = $update['message']['from']['username'];
 $message = $update['message']['text'];
 $txt_msg = $message;
-$txt_msg=iconv("utf-8", "cp1251", $txt_msg['text']);
+$txt_msg=iconv("utf-8", "cp1251", $txt_msg);
 $message_id = $update['message']['message_id'];
 $message_name = $update['message']['chat']['first_name'];
 

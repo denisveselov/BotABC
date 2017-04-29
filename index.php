@@ -98,7 +98,7 @@ function sendMessage($tokken, $chat_id, $ans_message)
 */
 var_dump($txt_msg);
 echo $txt_msg;
-file_put_contents("logs.txt", $txt_msg);
+file_put_contents("logs.txt", $message);
 
 
 

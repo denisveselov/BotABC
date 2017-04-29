@@ -3,7 +3,7 @@ $update = json_decode(file_get_contents('php://input'),true);
 var_dump($update);
 $chat_id = $update['message']['chat']['id'];
 $user_name = $update['message']['from']['username'];
-$message = $update['message']['text'];
+$message = mb_strtolower($update['message']['text'], "UTF-8");
 $txt_msg = $message;
 $message_id = $update['message']['message_id'];
 $message_name = $update['message']['chat']['first_name'];

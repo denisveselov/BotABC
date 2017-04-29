@@ -1,11 +1,12 @@
 <?php
+mb_internal_encoding("UTF-8");
 $update = file_get_contents('php://input');
 $update = json_decode($update, true);
 var_dump($update);
 $chat_id = $update['message']['chat']['id'];
 $user_name = $update['message']['from']['username'];
 $user_resp = $update['message']['text'];
-$message = mb_strtolower($user_messages, 'UTF-8');
+$message = mb_strtolower($user_messages, "UTF-8");
 $message_id = $update['message']['message_id'];
 $message_name = $update['message']['chat']['first_name'];
 

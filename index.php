@@ -8,7 +8,7 @@ include 'tokken_var.php';
 include 'cases.php';
 include 'aswer.php';
 
-/*
+
 //Logics
 switch (in_array($message,$test_case)){
     case TRUE:
@@ -95,9 +95,7 @@ function sendMessage($tokken, $chat_id, $ans_message)
 {
     file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $chat_id ."&text=". $ans_message);
 }
-*/
-echo $message;
-file_put_contents("logs.txt", $message);
+file_put_contents("logs.txt", $update);
 
 
 

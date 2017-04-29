@@ -6,7 +6,7 @@ $user_name = $update['message']['from']['username'];
 $message = $update['message']['text'];
 $txt_msg = $message;
 $coder = mb_internal_encoding();
-$txt_mess = mb_convert_variables($coder, "Windows-1251", $txt_msg);
+$txt_mess = mb_convert_variables($coder, $txt_msg);
 $message_id = $update['message']['message_id'];
 $message_name = $update['message']['chat']['first_name'];
 

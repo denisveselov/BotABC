@@ -89,12 +89,15 @@ switch (in_array($message,$complaints_case)) {
         sendMessage($tokken, $chat_id, $ans_message);
         break;
 }
-*/
+
 //send Messages end put to logs file
 function sendMessage($tokken, $chat_id, $ans_message)
 {
     file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $chat_id ."&text=". $ans_message);
 }
+*/
+var_dump($txt_msg);
+echo $txt_msg;
 file_put_contents("logs.txt", $txt_msg);
 
 

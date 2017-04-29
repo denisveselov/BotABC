@@ -1,5 +1,4 @@
 <?php
-mb_internal_encoding("UTF-8");
 $update = file_get_contents('php://input');
 $update = json_decode($update, true);
 var_dump($update);

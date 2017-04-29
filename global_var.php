@@ -5,7 +5,7 @@ var_dump($update);
 $chat_id = $update['message']['chat']['id'];
 $user_name = $update['message']['from']['username'];
 $user_resp = $update['message']['text'];
-$message = mb_strtolower($user_messages, 'UTF-8', true);
+$message = mb_strtolower($user_messages, 'UTF-8');
 $message_id = $update['message']['message_id'];
 $message_name = $update['message']['chat']['first_name'];
 

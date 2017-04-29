@@ -4,6 +4,7 @@ $update = json_decode($update, true);
 $chat_id = $update['message']['message']['chat']['id'];
 $user_name = $update['message']['from']['username'];
 $message = $update['message']['text'];
+$text = $message;
 $message_id = $update['message']['message_id'];
 $message_name = $update['message']['chat']['first_name'];
 
@@ -13,4 +14,5 @@ $message_name = $update['message']['chat']['first_name'];
 $user_messages = R::dispense('usermessages');
 $user_messages->chat_id = $chat_id;
 $user_messages->message_id = $message_id;
+$user_messages->message = $text;
 $id = R::store($user_messages);

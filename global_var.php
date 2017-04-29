@@ -5,8 +5,6 @@ $chat_id = $update['message']['chat']['id'];
 $user_name = $update['message']['from']['username'];
 $message = $update['message']['text'];
 $txt_msg = $message;
-$coder = mb_internal_encoding();
-$txt_mess = mb_convert_variables($coder, $txt_msg);
 $message_id = $update['message']['message_id'];
 $message_name = $update['message']['chat']['first_name'];
 
@@ -16,5 +14,5 @@ $message_name = $update['message']['chat']['first_name'];
 $user_messages = R::dispense('usermessages');
 $user_messages->chat_id = $chat_id;
 $user_messages->message_id = $message_id;
-$user_messages->message_txt = $txt_mess;
+/*$user_messages->message_txt = $txt_mess;*/
 $id = R::store($user_messages);

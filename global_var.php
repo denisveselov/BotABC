@@ -24,3 +24,5 @@ $user_messages->chat_id = $chat_id;
 $user_messages->message_id = $message_id;
 $user_messages->message_txt = $message;
 $id = R::store($user_messages);
+var_dump($user_messages);
+file_put_contents("logs.txt", $user_messages);

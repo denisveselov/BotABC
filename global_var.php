@@ -4,7 +4,6 @@ var_dump($update);
 $chat_id = $update['message']['chat']['id'];
 $user_name = $update['message']['from']['username'];
 $message = $update['message']['text'];
-$message = mb_convert_encoding($message, "cp1251", "utf-8");
 $messageDB = $message;
 /*
 $message = iconv('UTF-8', 'CP1251', $message);

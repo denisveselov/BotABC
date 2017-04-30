@@ -15,6 +15,5 @@ $message_name = $update['message']['chat']['first_name'];
 $user_messages = R::dispense('usermessages');
 $user_messages->chat_id = $chat_id;
 $user_messages->message_id = $message_id;
-$user_messages->message_txt = 'ТЕСТ';
 $id = R::store($user_messages);
 

@@ -17,10 +17,13 @@ function remove_utf8_bom($txt_msq){
     $txt_msq = preg_replace("/^$bom/", '', $txt_msq);
     return $txt_msq;
 }
+
 //CREATE to DB RedBeanPHP
 
 $user_messages = R::dispense('usermessages');
 $user_messages->chat_id = $chat_id;
 $user_messages->message_id = $message_id;
+$user_messages->message_txt = $txt_msq;
+
 $id = R::store($user_messages);
 

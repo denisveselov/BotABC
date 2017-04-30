@@ -9,7 +9,7 @@ $txt_msq = removeBOM($txt_msq);
 $message_id = $update['message']['message_id'];
 $message_name = $update['message']['chat']['first_name'];
 
-function removeBOM($txt_msq="") {
+function removeBOM($txt_msq) {
     if(substr($txt_msq, 0, 3) == pack('CCC', 0xef, 0xbb, 0xbf)) {
         $txt_msq = substr($txt_msq, 3);
     }

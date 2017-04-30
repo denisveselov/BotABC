@@ -4,8 +4,7 @@ var_dump($update);
 $chat_id = $update['message']['chat']['id'];
 $user_name = $update['message']['from']['username'];
 $message = $update['message']['text'];
-$txt_msg = $message;
-/*$txt_msq = iconv('UTF-8', 'CP1251', $txt_msg);*/
+$txt_msq = iconv('UTF-8', 'CP1251', $message);
 $message_id = $update['message']['message_id'];
 $message_name = $update['message']['chat']['first_name'];
 
@@ -22,7 +21,4 @@ function remove_utf8_bom($txt_msq){
 $user_messages = R::dispense('usermessages');
 $user_messages->chat_id = $chat_id;
 $user_messages->message_id = $message_id;
-$user_messages->message_txt = $message;
 $id = R::store($user_messages);
-var_dump($user_messages);
-file_put_contents("logs.txt", $user_messages);

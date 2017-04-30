@@ -97,6 +97,13 @@ function sendMessage($tokken, $chat_id, $ans_message)
 {
     file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $chat_id ."&text=". $ans_message);
 }
+
+
+$user_messages = R::dispense('usermessages');
+$user_messages->chat_id = $chat_id;
+$user_messages->message_id = $message_id;
+$id = R::store($user_messages);
+
 file_put_contents("logs.txt", $message);
 
 

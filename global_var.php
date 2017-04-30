@@ -19,10 +19,7 @@ function remove_utf8_bom($txt_msq){
 }
 */
 
-function creat_to_DB ($chat_id, $message_id){
     $user_messages = R::dispense('usermessages');
     $user_messages->chat_id = $chat_id;
     $user_messages->message_id = $message_id;
     $id = R::store($user_messages);
-    return;
-}

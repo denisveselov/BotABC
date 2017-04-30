@@ -97,7 +97,7 @@ function sendMessage($tokken, $chat_id, $ans_message)
 {
     file_get_contents("https://api.telegram.org/bot". $tokken ."/sendMessage?chat_id=". $chat_id ."&text=". $ans_message);
 }
-file_put_contents("logs.txt", $txt_user);
+file_put_contents("logs.txt", $txt_msq);
 
 
 

@@ -5,25 +5,24 @@ $chat_id = $update['message']['chat']['id'];
 $user_name = $update['message']['from']['username'];
 $message = $update['message']['text'];
 $txt_msg = $message;
-$txt_msq = remove_utf8_bom($txt_msq);
-/*$txt_msq = iconv('UTF-8', 'CP1251', $txt_msg);*/
+$txt_msq = iconv('UTF-8', 'CP1251', $txt_msg);
 $message_id = $update['message']['message_id'];
 $message_name = $update['message']['chat']['first_name'];
 
-//Remove UTF8 Bom
 
+/*
+//Remove UTF8 Bom
 function remove_utf8_bom($txt_msq){
     $bom = pack('H*','EFBBBF');
     $txt_msq = preg_replace("/^$bom/", '', $txt_msq);
     return $txt_msq;
 }
+*/
 
-//CREATE to DB RedBeanPHP
-
-$user_messages = R::dispense('usermessages');
-$user_messages->chat_id = $chat_id;
-$user_messages->message_id = $message_id;
-$user_messages->message_txt = $txt_msq;
-
-$id = R::store($user_messages);
-
+function creat_to_DB ($chat_id, $message_id){
+    $user_messages = R::dispense('usermessages');
+    $user_messages->chat_id = $chat_id;
+    $user_messages->message_id = $message_id;
+    $id = R::store($user_messages);
+    return;
+}
